@@ -25,4 +25,13 @@ accuracy = accuracy_score(y_test, y_pred)
 print(f"Accuracy: {accuracy}")
 
 # Save the model
-joblib.dump(clf, 'iris_model.pkl')
+# joblib.dump(clf, 'iris_model.pkl')
+
+import matplotlib.pyplot as plt
+from sklearn import tree
+
+# Visualize the decision tree
+plt.figure(figsize=(10, 8))
+tree.plot_tree(clf, filled=True)
+plt.savefig('decision_tree.png')
+plt.show()
